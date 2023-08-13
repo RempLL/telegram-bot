@@ -3,8 +3,8 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
-    <changeSet id="avatar.1" author="im">
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="task.2" author="im">
         <preConditions>
             <not>
                 <tableExists tableName="task"/>
@@ -16,28 +16,19 @@
                 <constraints primaryKey="true"/>
             </column>
 
-            <column name="file_path" type="VARCHAR(255)">
+            <column name="chat_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="file_size" type="BIGINT">
+            <column name="text" type="VARCHAR(4096)">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="media_type" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-
-            <column name="data" type="OID">
-                <constraints nullable="false"/>
-            </column>
-
-            <column name="student_id" type="BIGINT">
+            <column name="date_time" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
 
         </createTable>
-
     </changeSet>
 
 </databaseChangeLog>
